@@ -9,10 +9,10 @@ package vehiculos;
  * @author candr
  */
 public class Pais {
-    private String nombre;
+    private static String nombre;
 
-    public Pais(String nombre) {
-        this.nombre = nombre;
+    public Pais(String nombre){
+        Pais.nombre = nombre;
     }
 
     public String getNombre() {
@@ -20,7 +20,7 @@ public class Pais {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        Pais.nombre = nombre;
     }
     
     

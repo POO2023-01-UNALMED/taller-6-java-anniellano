@@ -8,18 +8,10 @@ package vehiculos;
  *
  * @author candr
  */
-public class Camion extends Vehiculo {
+public class Camion extends Vehiculo{
+    
     private long ejes;
     static int cantCamiones =0;
-
-    public Camion(long ejes) {
-        this.ejes = ejes;
-        super.puertas = 2;
-        super.velocidadMaxima = 80;
-        super.traccion = "4x2";
-        cantCamiones++;
-        
-    }
 
     public long getEjes() {
         return ejes;
@@ -31,13 +23,12 @@ public class Camion extends Vehiculo {
 
 
     public Camion(String placa, String nombre, int precio, int peso, Fabricante fabricante, long ejes) {
-       this(ejes);
-       this.placa = placa;
-       this.nombre = nombre;
-       this.precio = precio;
-       this.peso = peso;
-       this.fabricante = fabricante;
-
-       
+        super(placa, nombre, precio, peso, fabricante);
+        this.ejes = ejes;
+        super.puertas = 2;
+        super.velocidadMaxima = 80;
+        super.traccion = "4X2";
+        cantCamiones++;
     }
+
 }

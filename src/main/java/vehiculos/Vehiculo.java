@@ -4,6 +4,10 @@
  */
 package vehiculos;
 
+import static vehiculos.Automovil.cantAutomoviles;
+import static vehiculos.Camion.cantCamiones;
+import static vehiculos.Camioneta.cantCamionetas;
+
 /**
  *
  * @author candr
@@ -91,15 +95,43 @@ public class Vehiculo {
     public static void setCantidadVehiculos(int cantidadVehiculos){
         Vehiculo.cantidadVehiculos = cantidadVehiculos;
     }
-    public Vehiculo(String placa, long puertas, long velocidadMaxima, String nombre, int precio, long peso, String traccion, Fabricante fabricante) {
+    public Vehiculo(String placa, String nombre, int precio, long peso, Fabricante fabricante) {
         this.placa = placa;
-        this.puertas = puertas;
-        this.velocidadMaxima = velocidadMaxima;
         this.nombre = nombre;
         this.precio = precio;
         this.peso = peso;
-        this.traccion = traccion;
         this.fabricante = fabricante;
+        cantidadVehiculos++;       
+    }
+    
+    public Vehiculo(String placa, long puertas,String nombre, int precio, long peso, Fabricante fabricante) {
+        this.placa = placa;
+        this.nombre = nombre;
+        this.puertas = puertas;
+        this.precio = precio;
+        this.peso = peso;
+        this.fabricante = fabricante;
+        cantidadVehiculos++;
+        
+    }
+    
+    public Vehiculo(String placa, long puertas, long velocidadMaxima, String nombre, int precio, long peso, String traccion, Fabricante fabricante) {
+        this.placa = placa;
+        this.nombre = nombre;
+        this.puertas = puertas;
+        this.velocidadMaxima = velocidadMaxima;
+        this.precio = precio;
+        this.traccion = traccion;
+        this.peso = peso;
+        this.fabricante = fabricante;
+        cantidadVehiculos++;
+        
+    }
+    
+    public static String vehiculosPorTipo(){
+        return("Automoviles: "+cantAutomoviles+
+                        "\nCamionetas: "+cantCamionetas+
+                        "\nCamiones: "+cantCamiones);
     }
     
     

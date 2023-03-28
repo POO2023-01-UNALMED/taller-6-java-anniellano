@@ -9,20 +9,20 @@ package vehiculos;
  * @author candr
  */
 public class Fabricante {
-    private String nombre;
-    private Pais pais;
+    private static String nombre;
+    private static Pais pais;
 
     public Fabricante(String nombre, Pais pais) {
-        this.nombre = nombre;
-        this.pais = pais;
+        Fabricante.nombre = nombre;
+        Fabricante.pais = pais;
     }
     
     public Fabricante(String nombre){
-        this.nombre =nombre;
+        Fabricante.nombre =nombre;
     }
     
     public Fabricante(Pais pais){
-        this.pais = pais;
+        Fabricante.pais = pais;
     }
 
     public String getNombre() {
@@ -30,7 +30,7 @@ public class Fabricante {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        Fabricante.nombre = nombre;
     }
 
     public Pais getPais() {
@@ -38,7 +38,7 @@ public class Fabricante {
     }
 
     public void setPais(Pais pais) {
-        this.pais = pais;
+        Fabricante.pais = pais;
     }
     
     
