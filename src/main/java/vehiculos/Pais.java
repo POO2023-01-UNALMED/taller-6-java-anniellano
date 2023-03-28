@@ -4,6 +4,8 @@
  */
 package vehiculos;
 
+import java.util.Collections;
+
 /**
  *
  * @author candr
@@ -24,5 +26,11 @@ public class Pais {
     }
     
     
-
+    public static Pais paisMasVendedor(){
+        int iMaxVentas =Vehiculo.vPais.indexOf(Collections.max(Vehiculo.vPais));
+        return (Vehiculo.pais.get(iMaxVentas));
+    }
 }
+    
+
+

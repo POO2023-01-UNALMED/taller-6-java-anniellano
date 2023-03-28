@@ -4,6 +4,7 @@
  */
 package vehiculos;
 
+import java.util.ArrayList;
 import static vehiculos.Automovil.cantAutomoviles;
 import static vehiculos.Camion.cantCamiones;
 import static vehiculos.Camioneta.cantCamionetas;
@@ -23,6 +24,11 @@ public class Vehiculo {
     protected String traccion;
     protected Fabricante fabricante;
     protected static int cantidadVehiculos;
+    protected static ArrayList<Pais> pais = new ArrayList<>();
+    protected static ArrayList<Integer> vPais = new ArrayList<>();
+    protected static ArrayList<Fabricante> fabrica = new ArrayList<>();
+    protected static ArrayList<Integer> vFabrica = new ArrayList<>();
+
 
     public String getPlaca() {
         return placa;
@@ -101,7 +107,10 @@ public class Vehiculo {
         this.precio = precio;
         this.peso = peso;
         this.fabricante = fabricante;
-        cantidadVehiculos++;       
+        cantidadVehiculos++;  
+        ventasPaises(fabricante);
+        ventasFabrica(fabricante);
+        
     }
     
     public Vehiculo(String placa, long puertas,String nombre, int precio, long peso, Fabricante fabricante) {
@@ -112,7 +121,8 @@ public class Vehiculo {
         this.peso = peso;
         this.fabricante = fabricante;
         cantidadVehiculos++;
-        
+        ventasPaises(fabricante);
+        ventasFabrica(fabricante);
     }
     
     public Vehiculo(String placa, long puertas, long velocidadMaxima, String nombre, int precio, long peso, String traccion, Fabricante fabricante) {
@@ -125,7 +135,8 @@ public class Vehiculo {
         this.peso = peso;
         this.fabricante = fabricante;
         cantidadVehiculos++;
-        
+        ventasPaises(fabricante);
+        ventasFabrica(fabricante);
     }
     
     public static String vehiculosPorTipo(){
@@ -134,5 +145,26 @@ public class Vehiculo {
                         "\nCamiones: "+cantCamiones);
     }
     
+    public static void ventasPaises(Fabricante f){
+        pais.add(f.getPais());
+        vPais.add(0);
+        
+        for (int i = 0; i < pais.size(); i++) {
+            if (i == pais.indexOf(f.getPais())) {
+                vPais.set(i, vPais.get(i)+1);
+            }
+        }
+    }
+    
+    public static void ventasFabrica(Fabricante f){
+        fabrica.add(f);
+        vFabrica.add(0);
+        
+        for (int i = 0; i < fabrica.size(); i++) {
+            if (i == fabrica.indexOf(f)) {
+                vFabrica.set(i, vFabrica.get(i)+1);
+            }
+        }
+    }
     
 }

@@ -4,6 +4,8 @@
  */
 package vehiculos;
 
+import java.util.Collections;
+
 /**
  *
  * @author candr
@@ -41,5 +43,8 @@ public class Fabricante {
         Fabricante.pais = pais;
     }
     
-    
+    public static Fabricante fabricaMayorVentas(){
+        int iMaxVentas =Vehiculo.vFabrica.indexOf(Collections.max(Vehiculo.vFabrica));
+        return (Vehiculo.fabrica.get(iMaxVentas));
+    }
 }
